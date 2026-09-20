@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Mini Storage — Real-Time IoT Dashboard</title>
+  <meta name="description" content="Real-Time Environmental Monitoring & Automated Storage Control for Smart Mini Storage IoT hardware unit powered by ESP32 + DHT22." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              900: '#134e4a',
+            },
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+            },
+            dark: {
+              900: '#090d16',
+              800: '#0f172a',
+              700: '#1e293b',
+              600: '#334155',
+            }
+          },
+          animation: {
+            'spin-slow': 'spin 8s linear infinite',
+            'pulse-fast': 'pulse 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            glow: {
+              '0%': { boxShadow: '0 0 15px rgba(20, 184, 166, 0.2)' },
+              '100%': { boxShadow: '0 0 25px rgba(20, 184, 166, 0.6)' },
+            }
+          }
+        }
+      }
+    </script>
+
+  <!-- Native ES Module Import Map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://cdn.jsdelivr.net/npm/react@18.2.0/+esm",
+      "react/jsx-runtime": "https://cdn.jsdelivr.net/npm/react@18.2.0/jsx-runtime/+esm",
+      "react/jsx-dev-runtime": "https://cdn.jsdelivr.net/npm/react@18.2.0/jsx-dev-runtime/+esm",
+      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm",
+      "react-dom/client": "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/client/+esm",
+      "react-router-dom": "https://cdn.jsdelivr.net/npm/react-router-dom@6.22.3/+esm",
+      "recharts": "https://cdn.jsdelivr.net/npm/recharts@2.12.3/+esm",
+      "lucide-react": "https://cdn.jsdelivr.net/npm/lucide-react@0.344.0/+esm",
+      "axios": "https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm"
+    }
+  }
+  </script>
+
+  <!-- Babel Standalone for Browser Transpilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Global Custom Styles -->
+  <link rel="stylesheet" href="./src/styles/globals.css">
+  <link rel="stylesheet" href="./src/styles/dashboard.css">
+</head>
+<body class="bg-[#080c14] text-slate-100 font-sans antialiased selection:bg-teal-500 selection:text-white min-h-screen">
+  <div id="root">
+    <div class="flex flex-col items-center justify-center min-h-screen text-slate-400 font-mono text-xs gap-3">
+      <div class="w-8 h-8 rounded-full border-2 border-teal-400 border-t-transparent animate-spin"></div>
+      <span>Initializing Smart Mini Storage Telemetry Dashboard...</span>
+    </div>
+  </div>
+
+  <!-- Direct Babel Standalone Application Entry -->
+  <script type="text/babel" data-type="module" src="./src/app.jsx"></script>
+</body>
+</html>
