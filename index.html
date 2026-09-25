@@ -74,9 +74,6 @@
   }
   </script>
 
-  <!-- Babel Standalone for Browser Transpilation -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
   <!-- Global Custom Styles -->
   <link rel="stylesheet" href="./src/styles/globals.css">
   <link rel="stylesheet" href="./src/styles/dashboard.css">
@@ -85,11 +82,11 @@
   <div id="root">
     <div class="flex flex-col items-center justify-center min-h-screen text-slate-400 font-mono text-xs gap-3">
       <div class="w-8 h-8 rounded-full border-2 border-teal-400 border-t-transparent animate-spin"></div>
-      <span>Initializing Smart Mini Storage Telemetry Dashboard...</span>
+      <span>Loading Smart Mini Storage Dashboard...</span>
     </div>
   </div>
 
-  <!-- Direct Babel Standalone Application Entry -->
-  <script type="text/babel" data-type="module" src="./src/app.jsx"></script>
+  <!-- Pure Standard JavaScript Application Bundle -->
+  <script type="module" src="./src/app.js"></script>
 </body>
 </html>
